@@ -116,4 +116,30 @@ r2.fit(x_train, y_train)
 y_prod= r2.predict(x_test)
 
 
+import statsmodels.api as sm
 
+
+X= np.append(arr= np.ones((22,1)).astype(int), values= veri, axis=-1)
+
+X_1 = veri.iloc[:, [0,1,2,3,4,5]].values
+X_1 = np.array(X_1, dtype= float)
+model = sm.OLS (boy, X_1).fit()
+
+
+print (model.summary())
+
+
+X_1 = veri.iloc[:, [0,1,2,3,5]].values
+X_1 = np.array(X_1, dtype= float)
+model = sm.OLS (boy, X_1).fit()
+
+
+print (model.summary())
+
+
+X_1 = veri.iloc[:, [0,1,2,3]].values
+X_1 = np.array(X_1, dtype= float)
+model = sm.OLS (boy, X_1).fit()
+
+
+print (model.summary())
