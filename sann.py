@@ -74,7 +74,7 @@ classifier.add(Dense(1, init = 'uniform', activation = 'sigmoid'))
 
 classifier.compile(optimizer = 'adam', loss =  'binary_crossentropy' , metrics = ['accuracy'] )
 
-classifier.fit(X_train, y_train, epochs=75)
+classifier.fit(X_train, y_train, epochs=40)
 
 y_pred = classifier.predict(X_test)
 
@@ -86,6 +86,19 @@ cm = confusion_matrix(y_test,y_pred)
 print(cm)
 
 
+
+from xgboost import XGBClassifier
+classifier = XGBClassifier()
+
+classifier.fit(X_train, y_train)
+
+y_pred = classifier.predict(X_test)
+
+cm2= confusion_matrix(y_pred, y_test)
+
+print(cm2)
+
+           
 
 
 
